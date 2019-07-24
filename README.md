@@ -109,6 +109,7 @@ or
 
 - [Tiled](https://www.mapeditor.org/)
 - [baylej/tmx C tmx map loader](https://github.com/baylej/tmx)
+- Yuji Adachi for the [ARCADE_N.TTF font](https://www.dafont.com/arcade-ya.font)
 
 ## TODO
 
