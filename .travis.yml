@@ -1,0 +1,61 @@
+language: cpp
+dist: xenial
+sudo: required
+branches:
+ only:
+   - master
+
+# Use matrix expansion for linux/osx
+os:
+  - linux
+  - osx
+compiler:
+  - gcc
+  - clang
+
+before_install:
+  # libsdl2 2.0.8 for xenial https://launchpad.net/~litenstein/+archive/ubuntu/sdl2-xenial
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
+      sudo add-apt-repository ppa:litenstein/sdl2-xenial -y;
+      sudo apt-get update -qq;
+    fi
+
+install:
+  # install any dependencies required
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
+       sudo apt-get install libsdl2-dev -y;
+       sdl2-config --version;
+    fi
+  - if [ $TRAVIS_OS_NAME == osx ]; then 
+       brew update;
+       brew install sdl2;
+    fi  
+    
+script:
+  - ./genie_gmake.sh
+  - cd build
+  - make config=debug
+  - make config=dev
+  - make config=release
+
+# Explicitly include Windows job
+matrix:
+  include:
+    - os: windows
+      env:
+        - MSBUILD_PATH="/C/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSBuild/15.0/Bin"
+      script:
+        - export PATH=$MSBUILD_PATH:$PATH
+        - ./genie_vs2017.bat
+        - cd build
+          ## n.b. have to use double slash to use Windows style / command line option in Git Bash
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Debug sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Dev sdl2-sokoban.sln
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Release sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Debug sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Dev sdl2-sokoban.sln
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Release sdl2-sokoban.sln 
+        
+notifications:
+  email: false
+  
