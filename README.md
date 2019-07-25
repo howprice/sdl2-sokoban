@@ -4,31 +4,35 @@ Sokoban game written in C++ and SDL2
 
 ## Dependencies
 
-This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/)
+This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/), [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) and (TMX C Loader)[https://github.com/baylej/tmx/], which depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
 
-### Building zlib on Windows 10
+### Installing dependencies on Windows
 
-The following example is for a 64-bit build. For a 32-bit build replace x64 with x86.
+The following assumes that the repo has been cloned to C:\GitHub\howprice\sdl2-sokoban. The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated.
+
+Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/). 
+
+#### Building zlib on Windows
 
 1. Open a *x64 Native Tools Command Prompt for VS 2017*
-2. Download and unpack [zlib source code](https://www.zlib.net/)
+2. Download and unpack [zlib source code](https://www.zlib.net/):
 
         cd C:\src
         curl -O https://www.zlib.net/zlib-1.2.11.tar.gz
         tar xf zlib-1.2.11.tar.gz
-3. Build
+3. Build:
 
         cd zlib-1.2.11
         mkdir build
         cd build
         cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11"         (use -A Win32 for 32-bit build)
         msbuild /P:Configuration=Release INSTALL.vcxproj
-4. Copy libs into x64 folder
+4. Move libs into x64 folder:
 
         robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x64 * /MOV
         robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64 * /MOV
 
-### Building LibXML2 on Windows 10
+#### Building LibXML2 on Windows
 
 1. Download and unpack [LibXML2 source code](ftp://xmlsoft.org/libxml2/)
  
@@ -42,7 +46,23 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
         nmake /F Makefile.msvc
         nmake /f Makefile.msvc install
 
-References:
+#### Building TMX on Windows
+
+    git clone https://github.com/baylej/tmx/ C:\GitHub\baylej\tmx
+    cd C:\GitHub\baylej\tmx
+    mkdir build
+    cd build
+    cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DBUILD_SHARED_LIBS=on -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include" -DLIBXML2_LIBRARIES="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64"
+
+### Installing dependencies on Linux
+
+TODO
+
+### Installing dependencies on Mac OS X
+
+TODO
+
+## References:
 - [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
 - https://docs.microsoft.com/en-us/cognitive-toolkit/setup-buildzlib-vs17
 
@@ -116,6 +136,7 @@ or
 
 ## TODO
 
+- Try building TMX with cmake-gui https://github.com/baylej/tmx/wiki/Build-TMX-on-windows
 - Build TMX as separate library (Revert tmx src to vanilla, removing warning fixes too)
 - Fix Windows x64 build
 - Add Zlib and libxml2 to README
@@ -124,6 +145,7 @@ or
 - Get game building on Windows
   - Remove "_access" (search source)
 
+- Build this project with cmake?
 - Set up Travis-ci
 - Add Controls above
 - Latest version of Tiled
