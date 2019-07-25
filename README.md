@@ -11,12 +11,10 @@ This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://
 The following example is for a 64-bit build. For a 32-bit build replace x64 with x86.
 
 1. Open a *x64 Native Tools Command Prompt for VS 2017*
-2. Download [zlib source code](https://www.zlib.net/)
-
-        curl -O https://www.zlib.net/zlib-1.2.11.tar.gz
-3. Unpack to folder
+2. Download and unpack [zlib source code](https://www.zlib.net/)
 
         cd C:\src
+        curl -O https://www.zlib.net/zlib-1.2.11.tar.gz
         tar xf zlib-1.2.11.tar.gz
 4. Build
 
