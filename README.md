@@ -38,14 +38,9 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
 2. Build
 
         cd libxml2-2.9.9\win32
-        cscript configure.js trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include lib=C:\src\zlib-1.2.11\build\Release
+        cscript configure.js compiler=msvc prefix=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9 trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include lib=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64
         nmake /F Makefile.msvc
-        nmake /f Makefile.msvc install    (this generates the 'include', 'libs', and 'bin' folders)
-3. Copy headers, libs and DLL into sokoban project
-
-        xcopy include C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include /s /i /f
-        xcopy lib C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64 /s /i /f
-        xcopy bin\libxml2.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\bin\x64\* /i /f
+        nmake /f Makefile.msvc install
 
 References:
 - [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
