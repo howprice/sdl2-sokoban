@@ -1,4 +1,8 @@
 
+# Dependencies, which the user is expect to provide
+3rdParty/libxml*
+3rdParty/zlib**
+
 #################
 ## Visual Studio
 #################
