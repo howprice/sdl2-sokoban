@@ -21,12 +21,12 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
         cd zlib-1.2.11
         mkdir build
         cd build
-        cmake .. -G"Visual Studio 15 2017" -A x64'    (use -A Win32 for 32-bit build)
-        msbuild /P:Configuration=Release zlib.vcxproj'
+        cmake .. -G"Visual Studio 15 2017" -A x64    (use -A Win32 for 32-bit build)
+        msbuild /P:Configuration=Release zlib.vcxproj
 5. Copy headers and DLL into sokoban project
 
-        xcopy ..\*.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include /s /i /f'
-        xcopy Release\zlib.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x86\* /i /f'
+        xcopy ..\*.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include /s /i /f
+        xcopy Release\zlib.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x86\* /i /f
 
 ### Building LibXML2 on Windows 10
 
