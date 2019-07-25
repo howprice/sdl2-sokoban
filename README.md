@@ -6,28 +6,30 @@ Sokoban game written in C++ and SDL2
 
 This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/)
 
-### Building libxml2 on Windows
+### Building zlib on Windows 10
 
-With reference to the [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows):
+The following example is for a 64-bit build. For a 32-bit build replace x64 with x86.
 
- 1. Install [CMake](https://cmake.org/) and add binaries to 'PATH'
- 2.
+1. Open a *x64 Native Tools Command Prompt for VS 2017*
+2. Download [zlib source code](https://www.zlib.net/)
 
- 1. Download [zlib source code](https://www.zlib.net/)
- 2. Unpack to folder e.g. 'C:\Code\zlib-1.2.11'
- 3. Open a Visual Studio command prompt
-    - For 32-bit Start -> Visual Studio 2017 -> x86 Native Tools Command Prompt for VS 2017
-	- For 64-bit Start -> Visual Studio 2017 -> x64 Native Tools Command Prompt for VS 2017
- 4. 'cd C:\Code\zlib-1.2.11'
- 5. 'mkdir build'
- 6. 'cd build'
-    - 'cmake .. -G"Visual Studio 15 2017" -A Win32'
-    - 'cmake .. -G"Visual Studio 15 2017" -A x64'
- 7. 'msbuild /P:Configuration=Release zlib.vcxproj'
- 8. Copy 'includes' folder e.g. 'xcopy ..\*.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include /s /i /f'
- 9. Copy DLL into project folder e.g. 'xcopy Release\zlib.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x86\* /i /f'
+        curl -O https://www.zlib.net/zlib-1.2.11.tar.gz
+3. Unpack to folder
 
-Build LibXML2
+        cd C:\src
+        tar xf zlib-1.2.11.tar.gz
+4. Build
+
+        mkdir build
+        cd build
+        cmake .. -G"Visual Studio 15 2017" -A x64'    (use -A Win32 for 32-bit build)
+        msbuild /P:Configuration=Release zlib.vcxproj'
+5. Copy headers and DLL into sokoban project
+
+        xcopy ..\*.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include /s /i /f'
+        xcopy Release\zlib.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x86\* /i /f'
+
+### Building LibXML2 on Windows 10
 
  1. Download [LibXML2](ftp://xmlsoft.org/libxml2/) e.g. 'libxml2-2.9.9.tar.gz'
  2. Extract archive to folder e.g. 'C:\Code\libxml2-2.9.9' (use [7zip](http://7-zip.org/))
@@ -42,6 +44,9 @@ Build LibXML2
  9. Copy 'libs' folder e.g. 'xcopy lib C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x86 /s /i /f'
  10. Copy DLL from 'bin' folder e.g. 'xcopy bin\libxml2.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\bin\x86\* /i /f'
 
+References:
+- [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
+- https://docs.microsoft.com/en-us/cognitive-toolkit/setup-buildzlib-vs17
 
 ## Building and Running
 
