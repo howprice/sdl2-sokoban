@@ -21,13 +21,12 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
         cd zlib-1.2.11
         mkdir build
         cd build
-        cmake .. -G"Visual Studio 15 2017" -A x64    (use -A Win32 for 32-bit build)
-        msbuild /P:Configuration=Release zlib.vcxproj
-4. Copy headers and DLL into sokoban project
+        cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11"         (use -A Win32 for 32-bit build)
+        msbuild /P:Configuration=Release INSTALL.vcxproj
+4. Copy libs into x64 folder
 
-        copy zconf.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include
-        xcopy ..\*.h C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include /s /i /f
-        xcopy Release\zlib.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x86\* /i /f
+        robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x64 * /MOV
+        robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64 * /MOV
 
 ### Building LibXML2 on Windows 10
 
@@ -38,14 +37,15 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
         tar xf libxml2-2.9.9.tar.gz
 2. Build
 
-        cscript configure.js trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\Code\zlib-1.2.11 lib=c:\Code\zlib-1.2.11\build\Release
+        cd libxml2-2.9.9\win32
+        cscript configure.js trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include lib=C:\src\zlib-1.2.11\build\Release
         nmake /F Makefile.msvc
         nmake /f Makefile.msvc install    (this generates the 'include', 'libs', and 'bin' folders)
 3. Copy headers, libs and DLL into sokoban project
 
         xcopy include C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include /s /i /f
-        xcopy lib C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x86 /s /i /f
-        xcopy bin\libxml2.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\bin\x86\* /i /f
+        xcopy lib C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64 /s /i /f
+        xcopy bin\libxml2.dll C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9\bin\x64\* /i /f
 
 References:
 - [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
