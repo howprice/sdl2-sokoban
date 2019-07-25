@@ -38,7 +38,7 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
 2. Build
 
         cd libxml2-2.9.9\win32
-        cscript configure.js compiler=msvc prefix=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9 trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include lib=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64
+        cscript configure.js compiler=msvc prefix=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\libxml2-2.9.9 libdir=$(PREFIX)\lib\x64 sodir=$(PREFIX)\bin\x64 bindir=$(PREFIX)\bin\x64 trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include lib=C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64
         nmake /F Makefile.msvc
         nmake /f Makefile.msvc install
 
