@@ -4,7 +4,7 @@ Sokoban game written in C++ and SDL2
 
 ## Dependencies
 
-This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/)
+This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/), [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) and (TMX C Loader)[https://github.com/baylej/tmx/], which depends on (zlib)[https://www.zlib.net/] and (LibXML2)[http://www.xmlsoft.org/].
 
 ### Installing dependencies on Windows
 
@@ -12,7 +12,7 @@ The following assumes that the repo has been cloned to C:\GitHub\howprice\sdl2-s
 
 Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/). 
 
-### Building zlib on Windows
+#### Building zlib on Windows
 
 1. Open a *x64 Native Tools Command Prompt for VS 2017*
 2. Download and unpack [zlib source code](https://www.zlib.net/):
@@ -32,7 +32,7 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
         robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x64 * /MOV
         robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64 * /MOV
 
-### Building LibXML2 on Windows
+#### Building LibXML2 on Windows
 
 1. Download and unpack [LibXML2 source code](ftp://xmlsoft.org/libxml2/)
  
@@ -46,13 +46,21 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
         nmake /F Makefile.msvc
         nmake /f Makefile.msvc install
 
-### Building TMX on Windows
+#### Building TMX on Windows
 
     git clone https://github.com/baylej/tmx/ C:\GitHub\baylej\tmx
     cd C:\GitHub\baylej\tmx
     mkdir build
     cd build
     cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DBUILD_SHARED_LIBS=on -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include" -DLIBXML2_LIBRARIES="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64"
+
+### Installing dependencies on Linux
+
+TODO
+
+### Installing dependencies on Mac OS X
+
+TODO
 
 ## References:
 - [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
