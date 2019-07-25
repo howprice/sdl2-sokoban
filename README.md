@@ -18,6 +18,7 @@ The following example is for a 64-bit build. For a 32-bit build replace x64 with
         tar xf zlib-1.2.11.tar.gz
 4. Build
 
+        cd zlib-1.2.11
         mkdir build
         cd build
         cmake .. -G"Visual Studio 15 2017" -A x64'    (use -A Win32 for 32-bit build)
