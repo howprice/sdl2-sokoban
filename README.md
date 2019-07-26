@@ -30,7 +30,8 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
         cd zlib-1.2.11
         mkdir build
         cd build
-        cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11"         (use -A Win32 for 32-bit build)
+        cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11"
+		    (use -A Win32 for 32-bit build)
         msbuild /P:Configuration=Release INSTALL.vcxproj
 4. Move libs into x64 folder:
 
