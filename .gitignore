@@ -3,6 +3,7 @@
 3rdParty/libxml*
 3rdParty/zlib**
 3rdParty/tmx**
+3rdParty/sdl**
 
 #################
 ## Visual Studio
