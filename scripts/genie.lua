@@ -73,9 +73,7 @@ solution "sdl2-sokoban"
 			includedirs {
 				"../3rdParty/" .. SDL2 .. "/include",
 				"../3rdParty/" .. SDL2_IMAGE .. "/include",
-				"../3rdParty/" .. SDL2_TTF .. "/include",
-				--"../3rdparty/" .. LIBXML .. "/include/libxml2",
-				--"../3rdparty/" .. ZLIB .. "/include",
+				"../3rdParty/" .. SDL2_TTF .. "/include"
 			}
 			flags { "ReleaseRuntime" }  
 			links { "SDL2", "SDL2main" }
@@ -115,6 +113,7 @@ solution "sdl2-sokoban"
 				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
 		configuration "gcc"
