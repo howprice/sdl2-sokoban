@@ -6,7 +6,6 @@ SDL2_IMAGE = "SDL2_image-2.0.5"
 SDL2_TTF = "SDL2_ttf-2.0.15"
 LIBXML = "libxml2-2.9.9"
 ZLIB = "zlib-1.2.11"
---ICONV = "iconv-1.9.2.win32"
 
 solution "sdl2-sokoban"
 	location "../build"
@@ -40,20 +39,19 @@ solution "sdl2-sokoban"
 			"../README.md",
 			"../scripts/genie.lua",
 			"../src/**",
-			"../3rdParty/tmx/*.h",
-			"../3rdParty/tmx/*.c",
+			"../3rdParty/tmx/include/*"
 		}
 		includedirs {
 			"../src",
-			"../3rdParty/tmx/"
+			"../3rdParty/tmx/include"
 		}
 		flags { "ExtraWarnings", "FatalWarnings" }
 		links { 
 			"SDL2_image", "SDL2_ttf",  -- not in the string returned by `sdl2-config --links`
 			"libxml2", 
-			--"zlib" 
+			"zlib",
+			"tmx"
 		}
-		defines { "WANT_ZLIB" }
 		debugdir "../data"		-- debugger working directory
 		
 		configuration "Debug"
@@ -76,9 +74,8 @@ solution "sdl2-sokoban"
 				"../3rdParty/" .. SDL2 .. "/include",
 				"../3rdParty/" .. SDL2_IMAGE .. "/include",
 				"../3rdParty/" .. SDL2_TTF .. "/include",
-				"../3rdparty/" .. LIBXML .. "/include/libxml2",
-				"../3rdparty/" .. ZLIB .. "/include",
-				--"../3rdparty/" .. ICONV .. "/include"
+				--"../3rdparty/" .. LIBXML .. "/include/libxml2",
+				--"../3rdparty/" .. ZLIB .. "/include",
 			}
 			flags { "ReleaseRuntime" }  
 			links { "SDL2", "SDL2main" }
@@ -93,23 +90,25 @@ solution "sdl2-sokoban"
 				"../3rdParty/" .. SDL2_IMAGE .. "/lib/x86",
 				"../3rdParty/" .. SDL2_TTF .. "/lib/x86",
 				"../3rdparty/" .. LIBXML .. "/lib/x86",
-				--"../3rdparty/" .. ZLIB .. "/lib",
-				--"../3rdparty/" .. ICONV .. "/lib"
+				"../3rdparty/" .. ZLIB .. "/lib/x86",
+				"../3rdParty/tmx/lib/x86"
 			}
 			postbuildcommands { 
 				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				--"copy ..\\3rdparty\\" .. ICONV .. "\\bin\\*.dll ..\\bin\\$(ConfigurationName)"
+				--"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
+				--"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
 		configuration { "windows", "x64" }		
 			libdirs { 
 				"../3rdParty/" .. SDL2 .. "/lib/x64",
 				"../3rdParty/" .. SDL2_IMAGE .. "/lib/x64",
-				"../3rdParty/" .. SDL2_TTF .. "/lib/x64"
+				"../3rdParty/" .. SDL2_TTF .. "/lib/x64",
+				"../3rdParty/" .. LIBXML .. "/lib/x64",
+				"../3rdparty/" .. ZLIB .. "/lib/x64",
+				"../3rdParty/tmx/lib/x64",
 			}
 			postbuildcommands { 
 				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
