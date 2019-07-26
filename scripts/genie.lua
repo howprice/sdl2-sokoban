@@ -97,7 +97,7 @@ solution "sdl2-sokoban"
 				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				--"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				--"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
@@ -113,7 +113,8 @@ solution "sdl2-sokoban"
 			postbuildcommands { 
 				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)"
+				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
 		configuration "gcc"
