@@ -7,13 +7,7 @@ struct SDL_Window;
 class Game;
 class Renderer;
 
-//--------------------------------------------------------------------------------------------------
-/**
-    \class    App
-
-	The application layer. Responsible for managing major systems e.g. Rendering, audio, input, game.
-**/
-//--------------------------------------------------------------------------------------------------
+// The application layer. Responsible for managing major systems e.g. Rendering, audio, input, game.
 
 class App
 {
