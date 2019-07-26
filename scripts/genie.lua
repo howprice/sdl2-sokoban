@@ -1,6 +1,7 @@
 
 -- Windows lib folders
 -- TODO: Prefix with WIN_
+-- TODO: Get rid of the version numbers in the folder names
 SDL2 = "SDL2-2.0.10"
 SDL2_IMAGE = "SDL2_image-2.0.5"
 SDL2_TTF = "SDL2_ttf-2.0.15"
@@ -96,7 +97,7 @@ solution "sdl2-sokoban"
 				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				--"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
 		configuration { "windows", "x64" }		
