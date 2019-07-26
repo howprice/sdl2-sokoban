@@ -52,7 +52,8 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
     cd C:\GitHub\baylej\tmx
     mkdir build
     cd build
-    cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DBUILD_SHARED_LIBS=on -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include" -DLIBXML2_LIBRARIES="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64"
+    cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DBUILD_SHARED_LIBS=on -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY:FILEPATH="C:/GitHub/HowPrice/sdl2-sokoban/3rdParty/zlib-1.2.11/lib/x64/zlib.lib" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include\libxml2" -DLIBXML2_LIBRARIES:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64" -DLIBXML2_LIBRARY:FILEPATH=C:/GitHub/howprice/sdl2-sokoban/3rdParty/libxml2-2.9.9/lib/x64/libxml2.lib
+    msbuild /P:Configuration=Release INSTALL.vcxproj
 
 ### Installing dependencies on Linux
 
