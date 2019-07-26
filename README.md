@@ -31,7 +31,7 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
         mkdir build
         cd build
         cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11"
-		    (use -A Win32 for 32-bit build)
+		    (use -A Win32 for x86 32-bit build)
         msbuild /P:Configuration=Release INSTALL.vcxproj
 4. Move libs into x64 folder:
 
@@ -58,12 +58,11 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
     cd C:\GitHub\baylej\tmx
     mkdir build
     cd build
-    cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY:FILEPATH="C:/GitHub/HowPrice/sdl2-sokoban/3rdParty/zlib-1.2.11/lib/x64/zlib.lib" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include\libxml2" -DLIBXML2_LIBRARIES:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64" -DLIBXML2_LIBRARY:FILEPATH=C:/GitHub/howprice/sdl2-sokoban/3rdParty/libxml2-2.9.9/lib/x64/libxml2.lib
+    cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY:FILEPATH="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64\zlib.lib" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include\libxml2" -DLIBXML2_LIBRARIES:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64" -DLIBXML2_LIBRARY:FILEPATH=C:\GitHub/howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64\libxml2.lib
+        (use -A Win32 for x86 32-bit build)
     msbuild /P:Configuration=Release INSTALL.vcxproj
-    robocopy /MOVE /S /E C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\x64
-    robocopy /MOVE /S /E C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\x64 C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\x64
-
-TODO: Figure out how to do those last two lines in one!
+    robocopy /MOVE C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\x64 *.lib
+    robocopy /MOVE /S /E C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\cmake C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\x64\cmake
 
 #### SDL2
 
@@ -150,12 +149,11 @@ or
 
 ## TODO
 
+- Visual Studio clean should delete DLLs from target dir
 - Prefix genie.lua defines with WIN_
-- Remove all Doxygen style comments and headers
-- Get game building on Windows
-  - Remove "_access" (search source)
+- Remove "_access" (search source)
 - Remove zlib, libxml2 etc version numbers from genie.lua?
-- Remove SDL2 VC dev packages from repo. Add install instructions (curl + tar) and write install_dependencies.bat script. 
+- Remove SDL2 VC dev packages from repo. 
 - Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
 
 Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
