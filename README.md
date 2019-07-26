@@ -6,7 +6,12 @@ Sokoban game written in C++ and SDL2
 
 This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/), [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) and (TMX C Loader)[https://github.com/baylej/tmx/], which depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
 
+
 ### Installing dependencies on Windows
+
+Clone the repository before installing dependencies
+
+    git clone https://github.com/howprice/sdl2-sokoban C:\GitHub\howprice\sdl2-sokoban
 
 The following assumes that the repo has been cloned to C:\GitHub\howprice\sdl2-sokoban. The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated.
 
