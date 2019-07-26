@@ -55,6 +55,11 @@ Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](
     cmake .. -G"Visual Studio 15 2017" -A x64 -DCMAKE_INSTALL_PREFIX="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\tmx" -DBUILD_SHARED_LIBS=on -DZLIB_INCLUDE_DIR="C:\GitHub\HowPrice\sdl2-sokoban\3rdParty\zlib-1.2.11\include" -DZLIB_LIBRARY:FILEPATH="C:/GitHub/HowPrice/sdl2-sokoban/3rdParty/zlib-1.2.11/lib/x64/zlib.lib" -DLIBXML2_INCLUDE_DIR:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\include\libxml2" -DLIBXML2_LIBRARIES:PATH="C:\GitHub\howprice\sdl2-sokoban\3rdParty\libxml2-2.9.9\lib\x64" -DLIBXML2_LIBRARY:FILEPATH=C:/GitHub/howprice/sdl2-sokoban/3rdParty/libxml2-2.9.9/lib/x64/libxml2.lib
     msbuild /P:Configuration=Release INSTALL.vcxproj
 
+#### SDL2
+
+The [SDL2 Development libraries for Visual C++](https://www.libsdl.org/download-2.0.php) are checked in to 3rdparty for convenience. 
+TODO: Remove from repo and add steps to install
+
 ### Installing dependencies on Linux
 
 TODO
@@ -77,8 +82,6 @@ There are three build configurations:
 - Release - optimisations, no symbols, no asserts
 
 ### Windows
-
-The [SDL2 Development libraries for Visual C++](https://www.libsdl.org/download-2.0.php) are checked in to 3rdparty for convenience. 
 
 Download or clone the repository. Run genie_vs2017.bat or genie_vs2019.bat. This will build the Visual Studio Solution and Project files into the 'build' folder. Build and run from within visual studio.
 
