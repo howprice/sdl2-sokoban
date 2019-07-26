@@ -149,14 +149,18 @@ or
 
 ## TODO
 
-- Try building TMX with cmake-gui https://github.com/baylej/tmx/wiki/Build-TMX-on-windows
-- Build TMX as separate library (Revert tmx src to vanilla, removing warning fixes too)
-- Fix Windows x64 build
-- Add Zlib and libxml2 to README
 - Prefix genie.lua defines with WIN_
 - Remove all Doxygen style comments and headers
 - Get game building on Windows
   - Remove "_access" (search source)
+- Remove zlib, libxml2 etc version numbers from genie.lua?
+- Remove SDL2 VC dev packages from repo. Add install instructions (curl + tar) and write install_dependencies.bat script. 
+- Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
+
+Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
+
+
+Build https://github.com/baylej/tmx for Linux
 
 - Build this project with cmake?
 - Set up Travis-ci
