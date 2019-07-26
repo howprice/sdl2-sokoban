@@ -149,17 +149,10 @@ or
 
 ## TODO
 
-- Visual Studio clean should delete DLLs from target dir
-- Prefix genie.lua defines with WIN_
-- Remove "_access" (search source)
+- Update install_dependencies scripts to run from any directory (remove hardcoded C:\GitHub... paths)
 - Remove zlib, libxml2 etc version numbers from genie.lua?
-- Remove SDL2 VC dev packages from repo. 
 - Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
-
-Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
-
-
-Build https://github.com/baylej/tmx for Linux
+- Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
 
 - Build this project with cmake?
 - Set up Travis-ci

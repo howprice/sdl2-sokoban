@@ -5,9 +5,11 @@ IF NOT "%VSCMD_ARG_TGT_ARCH%" == "x64" (
 	EXIT /B 1
 )
 
-IF NOT EXIST C:\src mkdir C:\src
-pushd C:\src
+IF NOT EXIST C:\tmp mkdir C:\tmp
+pushd C:\tmp
 
+
+REM zlib
 IF NOT EXIST zlib-1.2.11.tar.gz (
 	ECHO Downloading zlib
 	curl -O https://www.zlib.net/zlib-1.2.11.tar.gz
@@ -26,6 +28,8 @@ popd
 robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\bin\x64 * /MOV
 robocopy C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\zlib-1.2.11\lib\x64 * /MOV
 
+
+REM LibXML2
 IF NOT EXIST libxml2-2.9.9.tar.gz (
 	ECHO Downloading LibXML2
 	curl -O ftp://xmlsoft.org/libxml2/libxml2-2.9.9.tar.gz
@@ -41,6 +45,8 @@ nmake /f Makefile.msvc install
 popd
 popd
 
+
+REM TMX
 IF EXIST tmx rmdir /S /Q tmx
 ECHO Cloning TMX
 git clone https://github.com/baylej/tmx
