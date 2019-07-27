@@ -99,6 +99,8 @@ or
 
 ## Controls
 
+Cursor keys
+
 ## Links and thanks
 
 - [Tiled](https://www.mapeditor.org/)
@@ -112,11 +114,9 @@ or
 - Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
 - Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
 
-- Latest version of Tiled
 - Mac OS X build
 - Build this project with cmake?
 - Set up Travis-ci (have to make repo public first)
-- Add Controls above
 - Add support for loading standard Sokoban SOK level files https://inventwithpython.com/pygame/chapter9.html http://sokobano.de/wiki/index.php?title=Level_format 
 - Figure out relative path problem when loading tileset pngs (I have manually made the paths relative in the .tmx files as a work-around)
 
