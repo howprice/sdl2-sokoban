@@ -9,13 +9,15 @@ This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://
 
 ### Installing dependencies on Windows
 
-Clone the repository before installing dependencies
+It is assumed that [tar and curl are available](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/). 
+
+Clone the repository before installing dependencies, for example:
 
     git clone https://github.com/howprice/sdl2-sokoban C:\GitHub\howprice\sdl2-sokoban
 
-The following assumes that the repo has been cloned to C:\GitHub\howprice\sdl2-sokoban. The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated.
+Install TMX and its dependencies by running [install_tmx.bat](install_tmx.bat) from a *x64 (64-bit) or x86 (32-bit) Native Tools Command Prompt for VS 2017*.
 
-Note: Windows 10 April 2018 Update and onwards have [tar and curl preinstalled](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/). 
+The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated. 
 
 #### Building zlib on Windows
 
