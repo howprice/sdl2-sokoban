@@ -1,6 +1,6 @@
 # sdl2-sokoban [![Build Status](https://travis-ci.org/howprice/sdl2-sokoban.svg?branch=master)](https://travis-ci.org/howprice/sdl2-sokoban)
 
-Sokoban game written in C++ and SDL2. Maps authored using [Tiled](https://www.mapeditor.org/) map editor and loaded using [TMX C Loader](https://github.com/baylej/tmx/).
+Sokoban game written in C++ and [SDL2](https://www.libsdl.org/index.php). Maps authored using [Tiled](https://www.mapeditor.org/) map editor and loaded using [TMX C Loader](https://github.com/baylej/tmx/).
 
 ## Dependencies
 
@@ -17,7 +17,7 @@ Clone the repository and install dependencies by running the provided batch scri
 	install_sdl.bat
 	install_tmx.bat
 
-Alternatively the [SDL2](https://www.libsdl.org/download-2.0.php), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) Windows VC development libraries can be unzipped manually into the [3rdParty] folder, removing the version numbers from the directory names.
+Alternatively the [SDL2](https://www.libsdl.org/download-2.0.php), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) Windows VC development libraries can be unzipped manually into the [3rdParty](3rdParty) folder, removing the version numbers from the directory names.
 
 To install TMX manually see [TMX.md](TMX.md).
 
