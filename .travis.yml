@@ -16,11 +16,11 @@ compiler:
 install:
   # install any dependencies required
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
-       sudo apt-get install libsdl2-dev -y;
+       sudo apt-get install libsdl2-dev -y -qq;
        sdl2-config --version;
-       sudo apt-get install libsdl2-image-dev -y;
-       sudo apt-get install libsdl2-ttf-dev -y;
-       sudo apt-get install libxml2-dev -y;
+       sudo apt-get install libsdl2-image-dev -y -qq;
+       sudo apt-get install libsdl2-ttf-dev -y -qq;
+       sudo apt-get install libxml2-dev -y -qq;
     fi
   - if [ $TRAVIS_OS_NAME == osx ]; then 
        brew update;
