@@ -24,15 +24,20 @@ Run [install_sdl.bat](install_sdl.bat) or download and extract the Windows VC de
 
 ### Installing dependencies on Linux
 
-TODO
+    sudo apt install libxml2-dev
+    sudo apt install cmake
+    git clone https://github.com/baylej/tmx
+    cd tmx
+    mkdir build
+    cmake ..
+    make
+    sudo make install   
+    
+    
 
 ### Installing dependencies on Mac OS X
 
 TODO
-
-## References:
-- [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
-- https://docs.microsoft.com/en-us/cognitive-toolkit/setup-buildzlib-vs17
 
 ## Building and Running
 
@@ -99,6 +104,9 @@ or
 - [Tiled](https://www.mapeditor.org/)
 - [baylej/tmx C tmx map loader](https://github.com/baylej/tmx)
 - Yuji Adachi for the [ARCADE_N.TTF font](https://www.dafont.com/arcade-ya.font)
+- [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
+- https://docs.microsoft.com/en-us/cognitive-toolkit/setup-buildzlib-vs17
+
 
 ## TODO
 
