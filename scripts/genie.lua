@@ -47,12 +47,24 @@ solution "sdl2-sokoban"
 			"../3rdParty/tmx/include"
 		}
 		flags { "ExtraWarnings", "FatalWarnings" }
+		
 		links { 
 			"SDL2_image", "SDL2_ttf",  -- not in the string returned by `sdl2-config --links`
-			"libxml2", 
-			"zlib",
 			"tmx"
 		}
+
+		configuration "windows"
+			links {
+			      "libxml2",
+			      "zlib"
+			}
+			
+		configuration "linux"
+			links {
+			      "xml2",
+			      "z"
+			}
+			
 		debugdir "../data"		-- debugger working directory
 		
 		configuration "x64"
