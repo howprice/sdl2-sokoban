@@ -53,6 +53,8 @@ solution "sdl2-sokoban"
 			"tmx"
 		}
 
+		debugdir "../data"		-- debugger working directory
+		
 		configuration "windows"
 			links {
 			      "libxml2",
@@ -64,8 +66,7 @@ solution "sdl2-sokoban"
 			      "xml2",
 			      "z"
 			}
-			
-		debugdir "../data"		-- debugger working directory
+		
 		
 		configuration "x64"
 			targetdir "../bin/x64"
