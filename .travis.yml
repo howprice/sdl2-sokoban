@@ -33,7 +33,8 @@ install:
     cmake ..
   - make
   - sudo make install 
-  - cd ..\..
+  - pwd
+  - cd ../..
     
 script:
   - ./genie_gmake.sh
