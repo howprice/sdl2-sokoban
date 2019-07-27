@@ -4,6 +4,7 @@
 3rdParty/zlib**
 3rdParty/tmx**
 3rdParty/sdl**
+tmp/*
 
 #################
 ## Visual Studio

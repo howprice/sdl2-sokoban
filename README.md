@@ -109,8 +109,6 @@ or
 
 
 ## TODO
-
-- Update install_dependencies scripts to run from any directory (remove hardcoded C:\GitHub... paths)
 - Remove zlib, libxml2 etc version numbers from genie.lua?
 - Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
 - Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
