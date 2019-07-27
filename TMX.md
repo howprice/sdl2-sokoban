@@ -6,7 +6,7 @@
 
 Run [install_tmx.bat](install_tmx.bat) or follow the manual build steps below.
 
-The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated. 
+The example is for a 64-bit build. For a 32-bit build replace the CMAKE platform-name -A option with Win32 and the target folders with x86. 
 
 ### Building zlib on Windows
 
