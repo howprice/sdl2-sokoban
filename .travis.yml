@@ -27,13 +27,13 @@ install:
        brew install sdl2;
     fi  
     
-    git clone https://github.com/baylej/tmx
-    cd tmx
-    mkdir build
+  - git clone https://github.com/baylej/tmx;
+  - cd tmx;
+    mkdir build && cd build;
     cmake ..
-    make
-    sudo make install 
-    cd ..
+  - make
+  - sudo make install 
+  - cd ..
     
 script:
   - ./genie_gmake.sh
