@@ -122,7 +122,7 @@ Font* Renderer::LoadFont( const char* path, int size )
 	TTF_Font* pTtfFont = TTF_OpenFont( path, size );
 	if( !pTtfFont )
 	{
-		fprintf( stderr, "Failed to open font: %s\n", TTF_GetError() );
+		fprintf( stderr, "Failed to open font \"%s\" Error: %s\n", path, TTF_GetError() );
 		HP_ASSERT( pTtfFont, "Failed to open font" );
 		return nullptr;
 	}

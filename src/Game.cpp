@@ -3,7 +3,7 @@
 #include "Renderer.h"
 
 #include "hp_assert.h"
-
+#include "Helpers.h"
 
 static const unsigned int kGid_Empty = 0;
 static const unsigned int kGid_Wall = 1;
@@ -30,7 +30,7 @@ Game::~Game()
 
 bool Game::Init( Renderer& renderer )
 {
-	m_pFont = renderer.LoadFont( "Font/ARCADE_N.ttf", 8 );
+	m_pFont = renderer.LoadFont( "Font/ARCADE_N.TTF", 8 );
 
 	m_man = {};
 	m_man.position = {};
@@ -106,6 +106,7 @@ void Game::InitObjects()
 	tmx_layer* pLayers = pMap->ly_head;		// head of linked list
 
 	bool bFoundStartPosition = false;
+	HP_UNUSED(bFoundStartPosition);
 	while( pLayers )
 	{
 		if( pLayers->type == L_OBJGR )
