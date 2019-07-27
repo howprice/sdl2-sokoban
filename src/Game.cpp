@@ -4,7 +4,6 @@
 
 #include "hp_assert.h"
 
-#include  <io.h>		// _access
 
 static const unsigned int kGid_Empty = 0;
 static const unsigned int kGid_Wall = 1;
@@ -60,12 +59,14 @@ bool Game::InitLevel( unsigned int levelNumber, Renderer& renderer )
 //	SDL_snprintf(mapfilename, sizeof(mapfilename), "test.tmx" );
 	SDL_snprintf(mapfilename, sizeof(mapfilename), "%s/level_%03u.tmx", m_mapFolder, levelNumber);
 
-	// #TODO: Just use fopen/fclose
-	if( _access( mapfilename, 0 ) == -1 )
+	FILE* fp = fopen(mapfilename, "r");
+	if(fp == NULL)
 	{
 		// file doesn't exist
 		return false;
 	}
+	fclose(fp);
+	fp = NULL;
 
 	m_tileMap.LoadTMX( mapfilename );
 	HP_ASSERT( m_tileMap.GetNumTileLayers() == 1, "there should only be a single Tile Layer containing the walls, floor etc" );

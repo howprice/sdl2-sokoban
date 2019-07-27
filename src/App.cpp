@@ -13,7 +13,7 @@
 
 //--------------------------------------------------------------------------------------------------
 
-static void print_SDL_version( char* preamble, const SDL_version& v )
+static void print_SDL_version( const char* preamble, const SDL_version& v )
 {
 	printf( "%s %u.%u.%u\n", preamble, v.major, v.minor, v.patch );
 }
