@@ -1,6 +1,6 @@
 # sdl2-sokoban [![Build Status](https://travis-ci.org/howprice/sdl2-sokoban.svg?branch=master)](https://travis-ci.org/howprice/sdl2-sokoban)
 
-Sokoban game written in C++ and SDL2
+Sokoban game written in C++ and SDL2. Maps authored using [Tiled](https://www.mapeditor.org/) map editor and loaded using [TMX C Loader](https://github.com/baylej/tmx/).
 
 ## Dependencies
 
@@ -11,21 +11,30 @@ This project depends on [SDL2](https://www.libsdl.org), [SDL_image 2.0](https://
 
 It is assumed that [tar and curl are available](https://devblogs.microsoft.com/commandline/tar-and-curl-come-to-windows/). 
 
-Clone the repository before installing dependencies, for example:
+Clone the repository and install dependencies by running the provided batch scripts from a *Visual Studio Native Tools Command Prompt*
 
-    git clone https://github.com/howprice/sdl2-sokoban C:\GitHub\howprice\sdl2-sokoban
+    git clone https://github.com/howprice/sdl2-sokoban
+	install_sdl.bat
+	install_tmx.bat
 
-#### TMX 
-Install TMX and its dependencies by running [install_tmx.bat](install_tmx.bat) from a *Visual Studio Native Tools Command Prompt* or see [TMX.md](TMX.md) for manual installation instructions.
+Alternatively the [SDL2](https://www.libsdl.org/download-2.0.php), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) Windows VC development libraries can be unzipped manually into the [3rdParty] folder, removing the version numbers from the directory names.
 
-#### SDL2
+To install TMX manually see [TMX.md](TMX.md).
 
-Run [install_sdl.bat](install_sdl.bat) or download and extract the Windows VC development libraries for [SDL2](https://www.libsdl.org/download-2.0.php), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) into the [3rdParty] folder.
+To use different lib versions edit the variables at the top of [install_sdl.bat](install_sdl.bat) and [install_tmx.bat](install_tmx.bat).
 
 ### Installing dependencies on Linux
 
+Install developer libs using a package manager. For example, for Ubuntu and Raspberry Pi:
+
+	sudo apt-get install libsdl2-dev
+	sudo apt-get install libsdl2-image-dev
+	sudo apt-get install libsdl2-ttf-dev
     sudo apt install libxml2-dev
     sudo apt install cmake
+
+Clone, build and install [TMX C Loader](https://github.com/baylej/tmx/)
+
     git clone https://github.com/baylej/tmx
     cd tmx
     mkdir build
@@ -33,8 +42,6 @@ Run [install_sdl.bat](install_sdl.bat) or download and extract the Windows VC de
     make
     sudo make install   
     
-    
-
 ### Installing dependencies on Mac OS X
 
 TODO
@@ -50,15 +57,9 @@ There are three build configurations:
 
 ### Windows
 
-Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio.
+Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio, or build from *Visual Studio Native Tools Command Prompt* with [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019).
 
 ### Linux
-
-[Download dependencies](https://www.libsdl.org/download-2.0.php) and install from source, or install using a package manager. For example, for Ubuntu and Raspberry Pi:
-
-	$ sudo apt-get install libsdl2-dev
-	$ sudo apt-get install libsdl2-image-dev
-	$ sudo apt-get install libsdl2-ttf-dev
 
 Clone this repo, build the makefiles and build:
 
