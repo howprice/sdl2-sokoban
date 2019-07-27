@@ -1,8 +1,10 @@
 # TMX
 
-Instructions for building (TMX C Loader)[https://github.com/baylej/tmx/], which depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
+(TMX C Loader)[https://github.com/baylej/tmx/], depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
 
 ## Windows
+
+Run [install_tmx.bat](install_tmx.bat) or follow the manual build steps below.
 
 The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unless otherwise stated. 
 
@@ -52,3 +54,11 @@ The example is for a 64-bit build. For a 32-bit build replace x64 with x86 unles
     msbuild /P:Configuration=Release INSTALL.vcxproj
     robocopy /MOVE C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\x64 *.lib
     robocopy /MOVE /S /E C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\cmake C:\GitHub\howprice\sdl2-sokoban\3rdParty\tmx\lib\x64\cmake
+
+## Linux
+
+TODO
+
+## Mac OS X
+
+TODO
