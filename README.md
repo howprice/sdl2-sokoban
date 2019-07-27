@@ -109,7 +109,6 @@ or
 
 
 ## TODO
-- Store lib version numbers in variables in install_sdl.bat and install_tmx.bat
 - Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
 - Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
 
