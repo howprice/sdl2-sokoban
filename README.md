@@ -16,7 +16,7 @@ Clone the repository before installing dependencies, for example:
     git clone https://github.com/howprice/sdl2-sokoban C:\GitHub\howprice\sdl2-sokoban
 
 #### TMX 
-Install TMX and its dependencies by running [install_tmx.bat](install_tmx.bat) or see [TMX.md](TMX.md) for manual installation instructions.
+Install TMX and its dependencies by running [install_tmx.bat](install_tmx.bat) from a *Visual Studio Native Tools Command Prompt* or see [TMX.md](TMX.md) for manual installation instructions.
 
 #### SDL2
 
