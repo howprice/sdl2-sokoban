@@ -1,13 +1,3 @@
-
--- Windows lib folders
--- TODO: Prefix with WIN_
--- TODO: Get rid of the version numbers in the folder names
-SDL2 = "SDL2-2.0.10"
-SDL2_IMAGE = "SDL2_image-2.0.5"
-SDL2_TTF = "SDL2_ttf-2.0.15"
-LIBXML = "libxml2-2.9.9"
-ZLIB = "zlib-1.2.11"
-
 solution "sdl2-sokoban"
 	location "../build"
 	configurations { "Debug", "Dev", "Release" }
@@ -91,20 +81,20 @@ solution "sdl2-sokoban"
 			
 		configuration "windows"
 			includedirs {
-				"../3rdParty/" .. SDL2 .. "/include",
-				"../3rdParty/" .. SDL2_IMAGE .. "/include",
-				"../3rdParty/" .. SDL2_TTF .. "/include"
+				"../3rdParty/SDL2/include",
+				"../3rdParty/SDL2_image/include",
+				"../3rdParty/SDL2_ttf/include"
 			}
 			flags { "ReleaseRuntime" }  
 			links { "SDL2", "SDL2main" }
 			defines { "_CRT_SECURE_NO_WARNINGS" }
 
 			postbuildcommands { 
-				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\SDL2\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\SDL2_image\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\SDL2_ttf\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\libxml2\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\zlib\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
 			}
 
 
@@ -113,21 +103,21 @@ solution "sdl2-sokoban"
 
 		configuration { "windows", "not x64" }
 			libdirs { 
-				"../3rdParty/" .. SDL2 .. "/lib/x86",
-				"../3rdParty/" .. SDL2_IMAGE .. "/lib/x86",
-				"../3rdParty/" .. SDL2_TTF .. "/lib/x86",
-				"../3rdparty/" .. LIBXML .. "/lib/x86",
-				"../3rdparty/" .. ZLIB .. "/lib/x86",
+				"../3rdParty/SDL2/lib/x86",
+				"../3rdParty/SDL2_image/lib/x86",
+				"../3rdParty/SDL2_ttf/lib/x86",
+				"../3rdparty/libxml2/lib/x86",
+				"../3rdparty/zlib/lib/x86",
 				"../3rdParty/tmx/lib/x86"
 			}
 
 		configuration { "windows", "x64" }		
 			libdirs { 
-				"../3rdParty/" .. SDL2 .. "/lib/x64",
-				"../3rdParty/" .. SDL2_IMAGE .. "/lib/x64",
-				"../3rdParty/" .. SDL2_TTF .. "/lib/x64",
-				"../3rdParty/" .. LIBXML .. "/lib/x64",
-				"../3rdparty/" .. ZLIB .. "/lib/x64",
+				"../3rdParty/SDL2/lib/x64",
+				"../3rdParty/SDL2_image/lib/x64",
+				"../3rdParty/SDL2_ttf/lib/x64",
+				"../3rdParty/libxml2/lib/x64",
+				"../3rdparty/zlib/lib/x64",
 				"../3rdParty/tmx/lib/x64",
 			}
 
