@@ -55,20 +55,26 @@ solution "sdl2-sokoban"
 		}
 		debugdir "../data"		-- debugger working directory
 		
+		configuration "x64"
+			targetdir "../bin/x64"
+
+		configuration "not x64"
+			targetdir "../bin/x86"
+
 		configuration "Debug"
 			--defines { "_DEBUG" } Removed this Windows define because using /MD rather than /MDd
 			defines { "DEBUG" }
 			flags { "Symbols" }
-			targetdir "../bin/debug"
+			targetsubdir "debug"
 
 		configuration "Dev"
 			flags { "Optimize", "Symbols" }			
-			targetdir "../bin/dev"
+			targetsubdir "dev"
 	
 		configuration "Release"
 			defines { "NDEBUG", "RELEASE" }
 			flags { "Optimize" }
-			targetdir "../bin/release"
+			targetsubdir "release"
 			
 		configuration "windows"
 			includedirs {
@@ -79,6 +85,15 @@ solution "sdl2-sokoban"
 			flags { "ReleaseRuntime" }  
 			links { "SDL2", "SDL2main" }
 			defines { "_CRT_SECURE_NO_WARNINGS" }
+
+			postbuildcommands { 
+				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\$(PlatformTarget)\\*.dll ..\\bin\\$(PlatformTarget)\\$(ConfigurationName)",
+			}
+
 
 		configuration { "windows", "release" }
 			buildoptions "/wd4390" -- empty controlled statement found; is this the intent? Required for ImGui in release
@@ -92,13 +107,6 @@ solution "sdl2-sokoban"
 				"../3rdparty/" .. ZLIB .. "/lib/x86",
 				"../3rdParty/tmx/lib/x86"
 			}
-			postbuildcommands { 
-				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x86\\*.dll ..\\bin\\$(ConfigurationName)",
-			}
 
 		configuration { "windows", "x64" }		
 			libdirs { 
@@ -108,13 +116,6 @@ solution "sdl2-sokoban"
 				"../3rdParty/" .. LIBXML .. "/lib/x64",
 				"../3rdparty/" .. ZLIB .. "/lib/x64",
 				"../3rdParty/tmx/lib/x64",
-			}
-			postbuildcommands { 
-				"copy ..\\3rdParty\\" .. SDL2 .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_IMAGE .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. SDL2_TTF .. "\\lib\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. LIBXML .. "\\bin\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
-				"copy ..\\3rdParty\\" .. ZLIB .. "\\bin\\x64\\*.dll ..\\bin\\$(ConfigurationName)",
 			}
 
 		configuration "gcc"
