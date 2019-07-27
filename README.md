@@ -92,7 +92,7 @@ There are three build configurations:
 
 ### Windows
 
-Download or clone the repository. Run genie_vs2017.bat or genie_vs2019.bat. This will build the Visual Studio Solution and Project files into the 'build' folder. Build and run from within visual studio.
+Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio.
 
 ### Linux
 
