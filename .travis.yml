@@ -16,15 +16,15 @@ compiler:
 install:
   # Linux
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
-    # install packaged dependencies
-    - sudo apt-get install libsdl2-dev -y -qq;
+      # install packaged dependencies
+      sudo apt-get -qq install libsdl2-dev -y;
       sdl2-config --version;
-      sudo apt-get install libsdl2-image-dev -y -qq;
-      sudo apt-get install libsdl2-ttf-dev -y -qq;
-      sudo apt-get install libxml2-dev -y -qq;
+      sudo apt-get -qq install libsdl2-image-dev -y;
+      sudo apt-get -qq install libsdl2-ttf-dev -y;
+      sudo apt-get -qq install libxml2-dev -y;
     
     # install tmx manually
-    - git clone https://github.com/baylej/tmx;
+      git clone https://github.com/baylej/tmx;
       cd tmx;
       mkdir build && cd build;
       cmake ..
@@ -42,7 +42,7 @@ install:
   # Windows
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
       - ./install_sdl.bat
-      - ./intall_tmx.bat
+      #- ./intall_tmx.bat
     fi
     
 script:
