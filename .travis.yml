@@ -27,10 +27,10 @@ install:
       git clone https://github.com/baylej/tmx;
       cd tmx;
       mkdir build && cd build;
-      cmake ..
-      make
-      sudo make install 
-      cd ../..
+      cmake ..;
+      make;
+      sudo make install;
+      cd ../..;
     fi
   
   # Mac OS X  
@@ -41,8 +41,8 @@ install:
     
   # Windows
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
-      - ./install_sdl.bat
-      #- ./intall_tmx.bat
+      ./install_sdl.bat;
+      # ./intall_tmx.bat
     fi
     
 script:
