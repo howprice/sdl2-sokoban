@@ -47,10 +47,11 @@ robocopy %ROOT%\3rdParty\zlib\lib %ROOT%\3rdParty\zlib\lib\%ARCH% * /MOV
 
 
 REM LibXML2
+REM Download from HTTP, because travis cannot use FTP reliably https://blog.travis-ci.com/2018-07-23-the-tale-of-ftp-at-travis-ci
 set LIBXML2_TARBALL=libxml2-%LIBXML2_VERSION%.tar.gz
 IF NOT EXIST %LIBXML2_TARBALL% (
 	ECHO Downloading %LIBXML2_TARBALL%
-	curl --disable-epsv -O ftp://xmlsoft.org/libxml2/%LIBXML2_TARBALL%
+	curl -O http://xmlsoft.org/sources/%LIBXML2_TARBALL%
 	IF NOT EXIST %LIBXML2_TARBALL% (
 		ECHO Failed to download %LIBXML2_TARBALL%
 		EXIT /B 1
