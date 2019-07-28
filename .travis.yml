@@ -59,13 +59,13 @@ matrix:
         - export PATH=$MSBUILD_PATH:$PATH
         - ./genie_vs2017.bat;
           cd build
-#          ## n.b. have to use double slash to use Windows style / command line option in Git Bash
-        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Debug sdl2-sokoban.sln 
-        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Dev sdl2-sokoban.sln
-        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Release sdl2-sokoban.sln 
-        - MSBuild.exe //p:Platform=x64 //p:Configuration=Debug sdl2-sokoban.sln 
-        - MSBuild.exe //p:Platform=x64 //p:Configuration=Dev sdl2-sokoban.sln
-        - MSBuild.exe //p:Platform=x64 //p:Configuration=Release sdl2-sokoban.sln         
+        # n.b. have to use double slash to use Windows style / command line option in Git Bash
+        #- MSBuild.exe //p:Platform=Win32 //p:Configuration=Debug sdl2-sokoban.sln 
+        #- MSBuild.exe //p:Platform=Win32 //p:Configuration=Dev sdl2-sokoban.sln
+        #- MSBuild.exe //p:Platform=Win32 //p:Configuration=Release sdl2-sokoban.sln 
+        #- MSBuild.exe //p:Platform=x64 //p:Configuration=Debug sdl2-sokoban.sln 
+        #- MSBuild.exe //p:Platform=x64 //p:Configuration=Dev sdl2-sokoban.sln
+        #- MSBuild.exe //p:Platform=x64 //p:Configuration=Release sdl2-sokoban.sln         
 
 notifications:
   email: false
