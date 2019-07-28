@@ -89,14 +89,8 @@ To run the game
 	$ cd data
 	$ ../bin/debug/sdl2-sokoban   (or dev or release)
 
-## Mac OS X
+### Mac OS X
 
-[Download dependencies](https://www.libsdl.org/download-2.0.php) and install from source, or install using [Brew](http://brew.sh):
-
-	$ brew install sdl2
-	$ brew install sdl2_image
-	$ brew install sdl2_ttf
-	
 Clone this repo, build the makefiles for either gcc (aliased to clang on Mac) or Xcode:
 
 	$ ./genie_gmake.sh   // then build and run as Linux above
