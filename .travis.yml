@@ -48,6 +48,8 @@ install:
       make;
       sudo make install;
       cd ../..;
+      
+      chmod +x tools/bin/macosx/genie
     fi 
     
   # Windows
