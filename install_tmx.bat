@@ -33,7 +33,7 @@ IF NOT EXIST %ZLIB_TARBALL% (
 set ZLIB_DIR=zlib-%ZLIB_VERSION%
 ECHO Building %ZLIB_DIR%
 IF EXIST %ZLIB_DIR% rmdir /S /Q %ZLIB_DIR%
-tar xf %ZLIB_TARBALL%
+tar xfz %ZLIB_TARBALL%
 pushd %ZLIB_DIR%
 mkdir build
 pushd build
@@ -51,11 +51,15 @@ set LIBXML2_TARBALL=libxml2-%LIBXML2_VERSION%.tar.gz
 IF NOT EXIST %LIBXML2_TARBALL% (
 	ECHO Downloading %LIBXML2_TARBALL%
 	curl -O ftp://xmlsoft.org/libxml2/%LIBXML2_TARBALL%
+	IF NOT EXIST %LIBXML2_TARBALL% (
+		ECHO Failed to download %LIBXML2_TARBALL%
+		EXIT /B 1
+	)
 )
 SET LIBXML2_DIR=libxml2-%LIBXML2_VERSION%
 ECHO Building %LIBXML2_DIR%
 IF EXIST %LIBXML2_DIR% rmdir /S /Q %LIBXML2_DIR%
-tar xf %LIBXML2_TARBALL%
+tar xfz %LIBXML2_TARBALL%
 pushd %LIBXML2_DIR%
 pushd win32
 cscript configure.js compiler=msvc prefix=%ROOT%\3rdParty\libxml2 libdir=$(PREFIX)\lib\%ARCH% sodir=$(PREFIX)\bin\%ARCH% bindir=$(PREFIX)\bin\%ARCH% trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=%ROOT%\3rdParty\zlib\include lib=%ROOT%\3rdParty\zlib\lib\%ARCH%
