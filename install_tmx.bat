@@ -1,4 +1,4 @@
-@echo off
+REM @echo off
 
 set ZLIB_VERSION=1.2.11
 set LIBXML2_VERSION=2.9.9
