@@ -51,7 +51,7 @@ solution "sdl2-sokoban"
 			      "zlib"
 			}
 			
-		configuration "linux"
+		configuration "gcc"
 			links {
 			      "xml2",
 			      "z"
