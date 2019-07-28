@@ -113,12 +113,9 @@ Cursor keys
 
 
 ## TODO
-- Simpify zlib build instructions? Is it possible to pass INSTALL_BIN_DIR, INSTALL_LIB_DIR etc on command line (see CMakeLists.txt) and remove robocopy step?
-- Create scripts/build.bat file (see https://github.com/electronicarts/EACopy)
-
 - Mac OS X build
+  - Add to .travis.yml
 - Build this project with cmake?
-- Set up Travis-ci (have to make repo public first)
 - Add support for loading standard Sokoban SOK level files https://inventwithpython.com/pygame/chapter9.html http://sokobano.de/wiki/index.php?title=Level_format 
 - Figure out relative path problem when loading tileset pngs (I have manually made the paths relative in the .tmx files as a work-around)
 
