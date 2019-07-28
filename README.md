@@ -29,9 +29,9 @@ To use different lib versions edit the variables at the top of [install_sdl.bat]
 
 Install developer libs using a package manager. For example, for Ubuntu and Raspberry Pi:
 
-	sudo apt-get install libsdl2-dev
-	sudo apt-get install libsdl2-image-dev
-	sudo apt-get install libsdl2-ttf-dev
+    sudo apt-get install libsdl2-dev
+    sudo apt-get install libsdl2-image-dev
+    sudo apt-get install libsdl2-ttf-dev
     sudo apt install libxml2-dev
     sudo apt install cmake
 
@@ -89,7 +89,7 @@ n.b. You may need to 'chmod +x' genie executable and or .sh shell script files.
 To run the game
 
 	$ cd data
-	$ ../bin/debug/sdl2-sokoban   (or dev or release)
+	$ ../bin/x86/debug/sdl2-sokoban   (or x64, or dev or release)
 
 ### Mac OS X
 
