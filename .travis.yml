@@ -8,7 +8,8 @@ branches:
 # Use matrix expansion for linux/osx
 os:
   - linux
-  #- osx
+  - osx
+ 
 compiler:
   - gcc
   - clang
@@ -21,7 +22,19 @@ install:
       sudo apt-get -qq install libsdl2-image-dev -y;
       sudo apt-get -qq install libsdl2-ttf-dev -y;
       sudo apt-get -qq install libxml2-dev -y;
-      
+    fi
+  
+  # Mac OS X  
+  - if [ $TRAVIS_OS_NAME == osx ]; then 
+       brew update;
+       brew install sdl2;
+       brew install sdl2-image;
+       brew install sdl2-ttf;
+       brew install libxml2;
+       brew install zlib;
+    fi 
+
+  - if [ "$TRAVIS_OS_NAME" = "linux" or "$TRAVIS_OS_NAME" = "osx" ]; then
       git clone https://github.com/baylej/tmx;
       cd tmx;
       mkdir build && cd build;
@@ -30,12 +43,6 @@ install:
       sudo make install;
       cd ../..;
     fi
-  
-  # Mac OS X  
-  - if [ $TRAVIS_OS_NAME == osx ]; then 
-       brew update;
-       brew install sdl2;
-    fi 
     
   # Windows
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
