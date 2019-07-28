@@ -118,8 +118,6 @@ Cursor keys
 
 
 ## TODO
-- Mac OS X build
-  - Add to .travis.yml
 - Build this project with cmake?
 - Add support for loading standard Sokoban SOK level files https://inventwithpython.com/pygame/chapter9.html http://sokobano.de/wiki/index.php?title=Level_format 
 - Figure out relative path problem when loading tileset pngs (I have manually made the paths relative in the .tmx files as a work-around)
