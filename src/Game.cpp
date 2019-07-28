@@ -5,7 +5,7 @@
 #include "hp_assert.h"
 #include "Helpers.h"
 
-static const unsigned int kGid_Empty = 0;
+//static const unsigned int kGid_Empty = 0; // unused
 static const unsigned int kGid_Wall = 1;
 static const unsigned int kGid_Floor = 2;
 static const unsigned int kGid_Man = 3;

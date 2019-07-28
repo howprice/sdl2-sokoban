@@ -116,7 +116,6 @@ private:
 
 	double			m_time;
 	float			m_deltaTimeSeconds;
-	bool			m_bPaused = false;
 	State			m_state = kStateTitleScreen;
 	float			m_timeInState = 0.0f;
 	unsigned int	m_currentLevel = 1;
