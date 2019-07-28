@@ -57,7 +57,7 @@ There are three build configurations:
 
 ### Windows
 
-Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio, or build from *Visual Studio Native Tools Command Prompt* with [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019).
+Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio, or [build from the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017) with [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2017).
 
 ### Linux
 
@@ -109,6 +109,7 @@ Cursor keys
 - Yuji Adachi for the [ARCADE_N.TTF font](https://www.dafont.com/arcade-ya.font)
 - [TMX Wiki](https://github.com/baylej/tmx/wiki/Build-dependencies-on-Windows)
 - https://docs.microsoft.com/en-us/cognitive-toolkit/setup-buildzlib-vs17
+- [YAML Lint](http://www.yamllint.com/) for validating [.travis.yml](.travis.yml) locally.
 
 
 ## TODO
