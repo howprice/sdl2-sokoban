@@ -39,8 +39,7 @@ install:
     
   # Windows
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
-      ./install_sdl.bat;
-      ./install_tmx_travis.bat;
+      curl -O ftp://xmlsoft.org/libxml2/libxml2-2.9.9.tar.gz
     fi
     
 script:
