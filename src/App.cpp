@@ -77,7 +77,7 @@ bool App::Init( bool bFullScreen, unsigned int displayWidth, unsigned int displa
 	print_SDL_version( "Linking against SDL_ttf version", *pLinkedVersion );
 
 	// Create SDL window
-	const char* title = "SDL Window";
+	const char* title = "Sokoban";
 	if( bFullScreen )
 	{
 		m_pWindow = SDL_CreateWindow( title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 0, 0, SDL_WINDOW_FULLSCREEN_DESKTOP );

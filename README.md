@@ -1,6 +1,8 @@
 # sdl2-sokoban [![Build Status](https://travis-ci.org/howprice/sdl2-sokoban.svg?branch=master)](https://travis-ci.org/howprice/sdl2-sokoban)
 
-Sokoban game written in C++ and [SDL2](https://www.libsdl.org/index.php). Maps authored using [Tiled](https://www.mapeditor.org/) map editor and loaded using [TMX C Loader](https://github.com/baylej/tmx/).
+Sokoban clone written in C++ and [SDL2](https://www.libsdl.org/index.php). Maps authored using [Tiled](https://www.mapeditor.org/) map editor and loaded using [TMX C Loader](https://github.com/baylej/tmx/).
+
+<br><img src="docs/screenshot.png">
 
 ## Dependencies
 
