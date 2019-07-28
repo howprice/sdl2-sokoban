@@ -38,13 +38,24 @@ Clone, build and install [TMX C Loader](https://github.com/baylej/tmx/)
     git clone https://github.com/baylej/tmx
     cd tmx
     mkdir build
+    cd build
     cmake ..
     make
     sudo make install   
     
 ### Installing dependencies on Mac OS X
 
-TODO
+    brew install sdl2
+    brew install sdl2_image
+    brew install sdl2_ttf
+    brew install cmake
+    git clone https://github.com/baylej/tmx
+    cd tmx
+    mkdir build
+    cd build
+    cmake ..
+    make
+    sudo make install  
 
 ## Building and Running
 
