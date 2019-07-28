@@ -33,7 +33,7 @@ install:
     fi
   
   # Mac OS X  
-  - if [ $TRAVIS_OS_NAME == osx ]; then 
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then 
       brew update;
       brew install sdl2;
       brew install sdl2-image;
@@ -49,7 +49,7 @@ install:
       sudo make install;
       cd ../..;
       
-      chmod +x tools/bin/macosx/genie
+      chmod +x tools/bin/macosx/genie;
     fi 
     
   # Windows
