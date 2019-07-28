@@ -27,8 +27,13 @@ pushd tmp
 REM zlib
 set ZLIB_TARBALL=zlib-%ZLIB_VERSION%.tar.gz
 IF NOT EXIST %ZLIB_TARBALL% (
-	ECHO Downloading %ZLIB_TARBALL%
-	curl -O https://www.zlib.net/%ZLIB_TARBALL%
+	SET ZLIB_URL=https://www.zlib.net/%ZLIB_TARBALL%
+	ECHO Downloading %ZLIB_URL%
+	curl -O %ZLIB_URL%
+	IF NOT EXIST %ZLIB_TARBALL% (
+		ECHO Failed to download %ZLIB_URL%
+		EXIT /B 1
+	)
 ) 
 set ZLIB_DIR=zlib-%ZLIB_VERSION%
 ECHO Building %ZLIB_DIR%
@@ -50,10 +55,11 @@ REM LibXML2
 REM Download from HTTP, because travis cannot use FTP reliably https://blog.travis-ci.com/2018-07-23-the-tale-of-ftp-at-travis-ci
 set LIBXML2_TARBALL=libxml2-%LIBXML2_VERSION%.tar.gz
 IF NOT EXIST %LIBXML2_TARBALL% (
-	ECHO Downloading %LIBXML2_TARBALL%
-	curl -O http://xmlsoft.org/sources/%LIBXML2_TARBALL%
+	SET LIBXML2_URL=http://xmlsoft.org/sources/%LIBXML2_TARBALL%
+	ECHO Downloading %LIBXML2_URL%
+	curl -O %LIBXML2_URL%
 	IF NOT EXIST %LIBXML2_TARBALL% (
-		ECHO Failed to download %LIBXML2_TARBALL%
+		ECHO Failed to download %LIBXML2_URL%
 		EXIT /B 1
 	)
 )
@@ -87,3 +93,5 @@ robocopy /MOVE /S /E %ROOT%\3rdParty\tmx\lib\cmake %ROOT%\3rdParty\tmx\lib\%ARCH
 popd
 
 popd
+
+EXIT /B 0
