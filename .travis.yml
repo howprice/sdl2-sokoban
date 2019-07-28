@@ -14,27 +14,36 @@ compiler:
   - clang
 
 install:
-  # install any dependencies required
+  # Linux
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 
-       sudo apt-get install libsdl2-dev -y -qq;
-       sdl2-config --version;
-       sudo apt-get install libsdl2-image-dev -y -qq;
-       sudo apt-get install libsdl2-ttf-dev -y -qq;
-       sudo apt-get install libxml2-dev -y -qq;
+    # install packaged dependencies
+    - sudo apt-get install libsdl2-dev -y -qq;
+      sdl2-config --version;
+      sudo apt-get install libsdl2-image-dev -y -qq;
+      sudo apt-get install libsdl2-ttf-dev -y -qq;
+      sudo apt-get install libxml2-dev -y -qq;
+    
+    # install tmx manually
+    - git clone https://github.com/baylej/tmx;
+      cd tmx;
+      mkdir build && cd build;
+      cmake ..
+      make
+      sudo make install 
+      cd ../..
     fi
+  
+  # Mac OS X  
   - if [ $TRAVIS_OS_NAME == osx ]; then 
        brew update;
        brew install sdl2;
-    fi  
+    fi 
     
-  - git clone https://github.com/baylej/tmx;
-  - cd tmx;
-    mkdir build && cd build;
-    cmake ..
-  - make
-  - sudo make install 
-  - pwd
-  - cd ../..
+  # Windows
+  - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
+      - ./install_sdl.bat
+      - ./intall_tmx.bat
+    fi
     
 script:
   - ./genie_gmake.sh
@@ -51,18 +60,16 @@ matrix:
         - MSBUILD_PATH="/C/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/MSBuild/15.0/Bin"
       script:
         - export PATH=$MSBUILD_PATH:$PATH
-        - ./install_sdl.bat
-#        - ./install_tmx.bat
-#        - ./genie_vs2017.bat
-#        - cd build
+        - ./genie_vs2017.bat;
+          cd build
 #          ## n.b. have to use double slash to use Windows style / command line option in Git Bash
-#        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Debug sdl2-sokoban.sln 
-#        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Dev sdl2-sokoban.sln
-#        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Release sdl2-sokoban.sln 
-#        - MSBuild.exe //p:Platform=x64 //p:Configuration=Debug sdl2-sokoban.sln 
-#        - MSBuild.exe //p:Platform=x64 //p:Configuration=Dev sdl2-sokoban.sln
-#        - MSBuild.exe //p:Platform=x64 //p:Configuration=Release sdl2-sokoban.sln 
-        
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Debug sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Dev sdl2-sokoban.sln
+        - MSBuild.exe //p:Platform=Win32 //p:Configuration=Release sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Debug sdl2-sokoban.sln 
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Dev sdl2-sokoban.sln
+        - MSBuild.exe //p:Platform=x64 //p:Configuration=Release sdl2-sokoban.sln         
+
 notifications:
   email: false
   
