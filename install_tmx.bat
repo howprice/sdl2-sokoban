@@ -36,9 +36,10 @@ IF NOT EXIST %ZLIB_TARBALL% (
 	)
 ) 
 set ZLIB_DIR=zlib-%ZLIB_VERSION%
-ECHO Building %ZLIB_DIR%
 IF EXIST %ZLIB_DIR% rmdir /S /Q %ZLIB_DIR%
+ECHO Extracting %ZLIB_DIR%
 tar xfz %ZLIB_TARBALL%
+ECHO Building %ZLIB_DIR%
 pushd %ZLIB_DIR%
 mkdir build
 pushd build
@@ -64,9 +65,10 @@ IF NOT EXIST %LIBXML2_TARBALL% (
 	)
 )
 SET LIBXML2_DIR=libxml2-%LIBXML2_VERSION%
-ECHO Building %LIBXML2_DIR%
 IF EXIST %LIBXML2_DIR% rmdir /S /Q %LIBXML2_DIR%
+ECHO Extracting %LIBXML2_DIR%
 tar xfz %LIBXML2_TARBALL%
+ECHO Building %LIBXML2_DIR%
 pushd %LIBXML2_DIR%
 pushd win32
 cscript configure.js compiler=msvc prefix=%ROOT%\3rdParty\libxml2 libdir=$(PREFIX)\lib\%ARCH% sodir=$(PREFIX)\bin\%ARCH% bindir=$(PREFIX)\bin\%ARCH% trio=no ftp=no http=no html=no c14n=no catalog=no docb=no xpath=yes xptr=no xinclude=no iconv=no icu=no iso8859x=no zlib=yes lzma=no debug=no xml_debug=no mem_debug=no run_debug=no schemas=no schematron=no regexps=no modules=no tree=yes reader=yes writer=yes walker=no pattern=no push=yes valid=no sax1=no legacy=no output=yes python=no include=%ROOT%\3rdParty\zlib\include lib=%ROOT%\3rdParty\zlib\lib\%ARCH%
