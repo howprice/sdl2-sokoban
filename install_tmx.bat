@@ -50,7 +50,7 @@ REM LibXML2
 set LIBXML2_TARBALL=libxml2-%LIBXML2_VERSION%.tar.gz
 IF NOT EXIST %LIBXML2_TARBALL% (
 	ECHO Downloading %LIBXML2_TARBALL%
-	curl -O ftp://xmlsoft.org/libxml2/%LIBXML2_TARBALL%
+	curl --disable-epsv -O ftp://xmlsoft.org/libxml2/%LIBXML2_TARBALL%
 	IF NOT EXIST %LIBXML2_TARBALL% (
 		ECHO Failed to download %LIBXML2_TARBALL%
 		EXIT /B 1
