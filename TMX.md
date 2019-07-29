@@ -1,6 +1,6 @@
 # TMX
 
-(TMX C Loader)[https://github.com/baylej/tmx/], depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
+[TMX C Loader](https://github.com/baylej/tmx/), depends on [zlib](https://www.zlib.net/) and [LibXML2](http://www.xmlsoft.org/).
 
 ## Windows
 
