@@ -1,4 +1,10 @@
-REM @echo off
+@echo off
+
+SET script_path=%~dp0
+pushd %script_path%
+
+REM cd up into repo root
+cd ..
 
 SET SDL2_VERSION=2.0.10
 SET SDL2_IMAGE_VERSION=2.0.5
@@ -43,4 +49,8 @@ IF %ERRORLEVEL% NEQ 0 unzip %SDL2_TTF_ZIP%
 IF %ERRORLEVEL% NEQ 0 EXIT /B 0
 robocopy /MOVE /S /E SDL2_ttf-%SDL2_TTF_VERSION% ..\3rdParty\SDL2_ttf
 
+REM back to repo root
+popd
+
+REM back to original directory
 popd
