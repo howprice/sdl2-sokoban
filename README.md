@@ -16,14 +16,14 @@ It is assumed that [tar and curl are available](https://devblogs.microsoft.com/c
 Clone the repository and install dependencies by running the provided batch scripts from a *Visual Studio Native Tools Command Prompt*
 
     git clone https://github.com/howprice/sdl2-sokoban
-	scripts\install_sdl.bat
-	install_tmx.bat
+    scripts\install_sdl.bat
+    scripts\install_tmx.bat
 
 Alternatively the [SDL2](https://www.libsdl.org/download-2.0.php), [SDL_image 2.0](https://www.libsdl.org/projects/SDL_image/) and [SDL_ttf 2.0](https://www.libsdl.org/projects/SDL_ttf/) Windows VC development libraries can be unzipped manually into the [3rdParty](3rdParty) folder, removing the version numbers from the directory names.
 
-To install TMX manually see [TMX.md](TMX.md).
+To install TMX manually see [TMX.md](docs/TMX.md).
 
-To use different lib versions edit the variables at the top of [install_sdl.bat](scripts\install_sdl.bat) and [install_tmx.bat](install_tmx.bat).
+To use different lib versions edit the variables at the top of [install_sdl.bat](scripts\install_sdl.bat) and [install_tmx.bat](scripts/install_tmx.bat).
 
 ### Installing dependencies on Linux
 

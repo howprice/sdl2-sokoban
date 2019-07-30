@@ -1,8 +1,13 @@
-REM @echo off
+@echo off
 
 set ZLIB_VERSION=1.2.11
 set LIBXML2_VERSION=2.9.9
 
+SET script_path=%~dp0
+pushd %script_path%
+
+REM cd up into repo root
+cd ..
 set ROOT=%cd%
 
 IF "%VSCMD_ARG_TGT_ARCH%" == "" (
@@ -94,6 +99,10 @@ robocopy /MOVE %ROOT%\3rdParty\tmx\lib %ROOT%\3rdParty\tmx\lib\%ARCH% *.lib
 robocopy /MOVE /S /E %ROOT%\3rdParty\tmx\lib\cmake %ROOT%\3rdParty\tmx\lib\%ARCH%\cmake
 popd
 
+REM return from tmp
+popd
+
+REM return to initial directory
 popd
 
 EXIT /B 0

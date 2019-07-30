@@ -55,7 +55,7 @@ install:
   # Windows
   - if [ "$TRAVIS_OS_NAME" = "windows" ]; then 
       scripts/install_sdl.bat;
-      ./install_tmx_travis.bat;
+      scripts/install_tmx_travis.bat;
     fi
     
 script:
