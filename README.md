@@ -72,13 +72,13 @@ There are three build configurations:
 
 Run genie_vs2017.bat or genie_vs2019.bat to generate the Visual Studio Solution and Project files into the 'build' folder. Build and run from within Visual Studio, or [build from the command line](https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2017) with [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2017).
 
-### Linux
+### Linux (including Raspberry Pi)
 
 Clone this repo, build the makefiles and build:
 
 	$ git clone https://github.com/howprice/sdl2-sokoban
 	$ cd sdl2-sokoban
-	$ ./genie_gmake.sh  (or ./genie_raspberrypi.sh)
+	$ scripts/genie_gmake.sh
 	$ cd build
 	$ make
 
@@ -95,15 +95,15 @@ To run the game
 
 Clone this repo, build the makefiles for either gcc (aliased to clang on Mac) or Xcode:
 
-	$ ./genie_gmake.sh   // then build and run as Linux above
+	$ scripts/genie_gmake.sh   // then build and run as Linux above
 	
 or
 
-	$ ./genie_xcode10.sh   // then build and run in XCode
+	$ scripts/genie_xcode10.sh   // then build and run in XCode
 
 ## Cleaning the build files
 
-	$ ./genie_clean.sh
+Run [genie_clean.bat](scripts/genie_clean.bat) on Windows or [genie_clean.sh](scripts/genie_clean.sh) on other platforms.
 
 ## Controls
 
@@ -120,8 +120,7 @@ Cursor keys
 
 
 ## TODO
-- Move the scripts into the [scripts](scripts) folder!
-- Turn off echo in .bat files
+
 - Build this project with cmake?
 - Add support for loading standard Sokoban SOK level files https://inventwithpython.com/pygame/chapter9.html http://sokobano.de/wiki/index.php?title=Level_format 
 - Figure out relative path problem when loading tileset pngs (I have manually made the paths relative in the .tmx files as a work-around)
